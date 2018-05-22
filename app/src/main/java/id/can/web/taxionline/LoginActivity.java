@@ -46,13 +46,18 @@ public class LoginActivity extends AppCompatActivity {
                                 try {
                                     JSONObject jsonObject = new JSONObject(response.body().string());
                                     String error = jsonObject.optString("error");
-                                    String ID = jsonObject.optString("ID");
-                                    String U_NAME = jsonObject.optString("U_NAME");
-                                    String U_FULLNAME = jsonObject.optString("U_FULLNAME");
-                                    String U_EMAIL = jsonObject.optString("U_EMAIL");
-                                    String U_NOMOR = jsonObject.optString("U_NOMOR");
-                                    String U_JK = jsonObject.optString("U_JK");
-                                    String U_AVATAR = jsonObject.optString("U_AVATAR");
+                                    String login_token = jsonObject.optString("login_token");
+                                    String user_id = jsonObject.optString("user_id");
+                                    String nama_user = jsonObject.optString("nama_user");
+                                    String email = jsonObject.optString("email");
+                                    String telpon = jsonObject.optString("telpon");
+                                    String rule = jsonObject.optString("rule");
+                                    String device_id = jsonObject.optString("device_id");
+                                    String login_waktu = jsonObject.optString("login_waktu");
+                                    String login_fb = jsonObject.optString("login_fb");
+                                    String login_google = jsonObject.optString("login_google");
+                                    String avatar_path = jsonObject.optString("avatar_path");
+
 
                                     Toast.makeText(LoginActivity.this, "" + error, Toast.LENGTH_SHORT).show();
                                     startActivity(new Intent(getApplicationContext(), HomeActivity.class));

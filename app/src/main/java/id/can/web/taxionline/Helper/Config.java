@@ -10,6 +10,8 @@ public final class Config {
 
     public static final String ERROR_NETWORK = "Periksa kembali jaringan anda";
     public static final String ERROR_FORM_REGISTER = "Periksa kembali form anda";
+    public static final String ERROR_FORM_LOGOUT = "Logout sukses";
+    public static final String ERROR_FORM_LOGOUT_GAGAL = "Logout gagal";
     public static final String ERROR_FORM_LOGIN = "Periksa kembali akun anda";
     public static final String ERROR_FORM_LOGIN_KURANG = "Cek akun anda";
     public static final String ERROR_NULL_DATA = "Data tidak ada";
@@ -104,6 +106,8 @@ public final class Config {
 
     //    shared mulai
     public static final String SHARED_PREF_NAME = "JOON";
+    public static final String SHARED_PREF_USERID = "USERID";
+    public static final String SHARED_PREF_TOKEN = "TOKEN";
     public static final String LOGGEDIN_SHARED_PREF = "logedin";
     public static final String SHARED_NAMALENGKAP = "NAMALENGKAP";
     public static final String SHARED_AGAMA = "AGAMA";

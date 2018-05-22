@@ -6,7 +6,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ClientServer {
-    private static String BASE_URL = "http://taxi.can.co.id/api/";
+    private static String BASE_URL = "http://taxi.can.co.id/travel_api/apilist/";
 
     private static Retrofit getClient() {
         HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();

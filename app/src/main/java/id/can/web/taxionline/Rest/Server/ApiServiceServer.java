@@ -1,11 +1,15 @@
 package id.can.web.taxionline.Rest.Server;
 
+import java.util.ArrayList;
+
+import id.can.web.taxionline.Model.CallCenterModel;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.Query;
 
 
 public interface ApiServiceServer {
@@ -13,20 +17,42 @@ public interface ApiServiceServer {
     Call<ResponseBody> getNews();
     @GET("getLatLong.php")
     Call<ResponseBody> getTps();
+    @GET("get_callcenter.php?")
+    Call<ArrayList<CallCenterModel>> getCallCenter(
+            @Query("userId") String userid,
+            @Query("loginToken") String token);
+
+    @GET("saldo_user_api.php?")
+    Call<ArrayList<CallCenterModel>> getSaldoUser(
+            @Query("userId") String userid,
+            @Query("loginToken") String token);
+    @GET("slider.php?")
+    Call<ArrayList<CallCenterModel>> getSlider(
+            @Query("userId") String userid,
+            @Query("loginToken") String token);
+    @GET("faq_api.php?")
+    Call<ArrayList<CallCenterModel>> getFaq(
+            @Query("userId") String userid,
+            @Query("loginToken") String token);
+
     @FormUrlEncoded
-    @POST("taxi_register.php")
-    Call<ResponseBody> postRegister(@Field("U_NAME") String U_NAME,
-                                               @Field("U_PASSWORD") String U_PASSWORD,
-                                               @Field("U_FULLNAME") String U_FULLNAME,
-                                               @Field("U_NOMOR") String U_NOMOR,
-                                               @Field("U_ROLE") String U_ROLE,
-                                               @Field("U_EMAIL") String U_EMAIL,
-                                               @Field("U_JK") String U_JK,
-                                               @Field("U_STATUS") String U_STATUS);
+    @POST("register_api.php")
+    Call<ResponseBody> postRegister(@Field("userId") String userId,
+                                               @Field("fullname") String fullname,
+                                               @Field("email") String email,
+                                               @Field("telpon") String telpon,
+                                               @Field("password") String password,
+                                               @Field("gender") String gender,
+                                               @Field("deviceid") String deviceid);
+
     @FormUrlEncoded
-    @POST("taxi_login.php")
-    Call<ResponseBody> postLogin(@Field("U_NAME") String U_NAME,
-                                               @Field("U_PASSWORD") String U_PASSWORD);
+    @POST("login_api.php")
+    Call<ResponseBody> postLogin(@Field("mobileEmail") String U_NAME,
+                                               @Field("mobilePassword") String U_PASSWORD);
+
+    @FormUrlEncoded
+    @POST("logout_api.php")
+    Call<ResponseBody> postLogout(@Field("user_id") String user_id);
 
 
 

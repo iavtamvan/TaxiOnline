@@ -135,6 +135,7 @@
                     android:gravity="center"
                     android:textSize="20dp"
                     android:layout_marginTop="12dp"
+                    android:id="@+id/tv_logout"
                     android:textColor="#b60000"/>
 
 

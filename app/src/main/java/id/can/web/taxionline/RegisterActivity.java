@@ -1,6 +1,7 @@
 package id.can.web.taxionline;
 
 import android.os.Bundle;
+import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -31,6 +32,8 @@ public class RegisterActivity extends AppCompatActivity {
     private RadioButton rbLakilaki;
     private RadioButton rbPerempuan;
     private Button btnRegister;
+    private String deviceID;
+    private long time;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +41,10 @@ public class RegisterActivity extends AppCompatActivity {
         setContentView(R.layout.activity_register);
         initView();
 
+        deviceID = Settings.Secure.getString(getContentResolver(),
+                Settings.Secure.ANDROID_ID);
+
+        time= System.currentTimeMillis();
 
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,9 +59,9 @@ public class RegisterActivity extends AppCompatActivity {
             Toast.makeText(this, "" + Config.ERROR_FORM_REGISTER, Toast.LENGTH_SHORT).show();
         } else {
             ApiServiceServer apiServiceServer  = ClientServer.getInstanceRetrofit();
-            apiServiceServer.postRegister(edtUsername.getText().toString().trim(), edtPassword.getText().toString().trim(),
-                    edtNamaLengkap.getText().toString().trim(), edtNohp.getText().toString().trim(), "User",
-                    edtEmail.getText().toString().trim(), jenisKelamin, "U_AKTIF")
+            apiServiceServer.postRegister(edtUsername.getText().toString().trim(), edtNamaLengkap.getText().toString().trim(),
+                    edtEmail.getText().toString().trim(),edtNohp.getText().toString().trim(),
+                    edtPassword.getText().toString().trim(),jenisKelamin, deviceID)
                     .enqueue(new Callback<ResponseBody>() {
                         @Override
                         public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
@@ -83,12 +90,12 @@ public class RegisterActivity extends AppCompatActivity {
         switch (view.getId()) {
             case R.id.rb_lakilaki:
                 if (checked) {
-                    jenisKelamin = "Laki - laki";
+                    jenisKelamin = "1";
                 }
                 break;
             case R.id.rb_perempuan:
                 if (checked) {
-                    jenisKelamin = "Perempuan";
+                    jenisKelamin = "0";
                 }
                 break;
         }
