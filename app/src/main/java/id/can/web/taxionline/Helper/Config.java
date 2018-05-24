@@ -105,7 +105,7 @@ public final class Config {
 
 
     //    shared mulai
-    public static final String SHARED_PREF_NAME = "JOON";
+    public static final String SHARED_PREF_NAME = "TAXI";
     public static final String SHARED_PREF_USERID = "USERID";
     public static final String SHARED_PREF_TOKEN = "TOKEN";
     public static final String LOGGEDIN_SHARED_PREF = "logedin";
@@ -119,14 +119,18 @@ public final class Config {
     public static final String SHARED_TEMPATLAHIR = "TEMPATLAHIR";
     public static final String SHARED_FOTO = "FOTO";
     public static final String SHARED_WAKTU = "WAKTU";
-    public static final String SHARED_NOHP = "NOHP";
+    public static final String SHARED_TELEPON = "NOHP";
     public static final String SHARED_JENISKELAMIN = "JENISKELAMIN";
     public static final String SHARED_EMAIL = "EMAIL";
     public static final String SHARED_USERNAME = "USERNAME";
     public static final String SHARED_WILAYAH = "WILAYAH";
     public static final String SHARED_STATUSUSER = "STATUSUSER";
-    public static final String SHARED_TOKEN = "TOKEN";
     public static final String SHARED_PETUGAS = "PETUGAS";
+
+    public static final String SHARED_LOGIN_WAKTU = "LOGINWAKTU";
+    public static final String SHARED_LOGIN_FB = "LOGINFB";
+    public static final String SHARED_LOGIN_GOOGLE = "LOGINFB";
+
 
     //    saving Vote
     public static final String SHARED_VOTESAVING = "VOTESAVING";
@@ -184,7 +188,7 @@ public final class Config {
         editor.putString(Config.SHARED_TEMPATLAHIR, "");
         editor.putString(Config.SHARED_FOTO, "");
         editor.putString(Config.SHARED_WAKTU, "");
-        editor.putString(Config.SHARED_NOHP, "");
+        editor.putString(Config.SHARED_TELEPON, "");
         editor.putString(Config.SHARED_JENISKELAMIN, "");
         editor.putString(Config.SHARED_EMAIL, "");
         editor.putString(Config.SHARED_USERNAME, "");
@@ -192,12 +196,14 @@ public final class Config {
         editor.putString(Config.SHARED_STATUSUSER, "");
         editor.putString(Config.SHARED_VOTESAVING, "");
         editor.putString(Config.SHARED_VOTELOGIN_SAVING, "");
-        editor.putString(Config.SHARED_TOKEN, "");
         editor.putString(Config.SHARED_HWID, "");
         editor.putString(Config.SHARED_DIGITAL_SIGNATURE, "");
         editor.putString(Config.SHARED_STATUS_APLIKASI, "");
         editor.putString(Config.SHARED_STATUS_VOTE, "");
         editor.putString(Config.SHARED_FOTO_FRONT, "");
+        editor.putString(Config.SHARED_LOGIN_WAKTU, "");
+        editor.putString(Config.SHARED_LOGIN_FB, "");
+        editor.putString(Config.SHARED_LOGIN_GOOGLE, "");
         //Saving the sharedpreferences
         editor.commit();
 

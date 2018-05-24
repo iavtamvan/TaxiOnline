@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import id.can.web.taxionline.Fragment.CallCenterFragment;
 import id.can.web.taxionline.R;
 import id.can.web.taxionline.Fragment.HomeFragment;
 import id.can.web.taxionline.Fragment.ProfilFragment;
@@ -32,6 +33,11 @@ public class HomeActivity extends AppCompatActivity {
                 case R.id.navigation_history:
                     return true;
                 case R.id.navigation_help:
+                    getSupportFragmentManager()
+                            .beginTransaction()
+                            .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                            .replace(R.id.frame_layout, new CallCenterFragment())
+                            .commit();
                     return true;
                 case R.id.navigation_profil:
                     getSupportFragmentManager()

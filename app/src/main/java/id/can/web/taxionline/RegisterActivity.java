@@ -1,5 +1,6 @@
 package id.can.web.taxionline;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
@@ -67,8 +68,10 @@ public class RegisterActivity extends AppCompatActivity {
                         public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                             try {
                                 JSONObject jsonObject = new JSONObject(response.body().string());
-                                String result = jsonObject.optString("error_msg");
+                                String result = jsonObject.optString("msg");
                                 Toast.makeText(RegisterActivity.this, "" + result, Toast.LENGTH_SHORT).show();
+                                startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+                                finish();
                             } catch (JSONException e) {
                                 e.printStackTrace();
                             } catch (IOException e) {

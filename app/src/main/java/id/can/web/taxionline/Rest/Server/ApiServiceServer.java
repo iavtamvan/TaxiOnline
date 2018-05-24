@@ -13,11 +13,10 @@ import retrofit2.http.Query;
 
 
 public interface ApiServiceServer {
-    @GET("AKfycbzSX0VVb_KNsORvGBc3q6dPrelDQAFGpc4JyvR-79tuKuKppYEK/exec?action=read&sheetName=news")
-    Call<ResponseBody> getNews();
+//    http://taxi.can.co.id/travel_api/apilist/get_callcenter.php?userId=el&loginToken=e8b685652b62a2effce190c37fd12c
     @GET("getLatLong.php")
     Call<ResponseBody> getTps();
-    @GET("get_callcenter.php?")
+    @GET("get_callcenter.php")
     Call<ArrayList<CallCenterModel>> getCallCenter(
             @Query("userId") String userid,
             @Query("loginToken") String token);
