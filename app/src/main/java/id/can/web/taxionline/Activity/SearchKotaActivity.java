@@ -101,6 +101,7 @@ public class SearchKotaActivity extends AppCompatActivity {
                                     editor.commit();
 
                                     startActivity(new Intent(getApplicationContext(), CariTaksiActivity.class));
+                                    finish();
 
                                 }
                             });
@@ -161,7 +162,7 @@ public class SearchKotaActivity extends AppCompatActivity {
 
                                     editor.commit();
                                     startActivity(new Intent(getApplicationContext(), CariTaksiActivity.class));
-
+                                    finish();
 
                                 }
                             });
