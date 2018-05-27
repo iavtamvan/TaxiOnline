@@ -3,6 +3,9 @@ package id.can.web.taxionline.Rest.Server;
 import java.util.ArrayList;
 
 import id.can.web.taxionline.Model.CallCenterModel;
+import id.can.web.taxionline.Model.CariJadwalModel;
+import id.can.web.taxionline.Model.KotaAwalModel;
+import id.can.web.taxionline.Model.KotaTujuanModel;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.Field;
@@ -17,22 +20,48 @@ public interface ApiServiceServer {
     @GET("getLatLong.php")
     Call<ResponseBody> getTps();
     @GET("get_callcenter.php")
-    Call<ArrayList<CallCenterModel>> getCallCenter(
+    Call<CallCenterModel> getCallCenter(
             @Query("userId") String userid,
             @Query("loginToken") String token);
 
-    @GET("saldo_user_api.php?")
+    @GET("saldo_user_api.php")
     Call<ArrayList<CallCenterModel>> getSaldoUser(
             @Query("userId") String userid,
             @Query("loginToken") String token);
-    @GET("slider.php?")
+    @GET("slider.php")
     Call<ArrayList<CallCenterModel>> getSlider(
             @Query("userId") String userid,
             @Query("loginToken") String token);
-    @GET("faq_api.php?")
+    @GET("faq_api.php")
     Call<ArrayList<CallCenterModel>> getFaq(
             @Query("userId") String userid,
             @Query("loginToken") String token);
+
+
+    @GET("get_kota_awal.php")
+    Call<ArrayList<KotaAwalModel>> getKotaAwal(
+            @Query("userId") String userid,
+            @Query("loginToken") String token);
+
+
+    @GET("get_kota_tujuan.php")
+    Call<ArrayList<KotaTujuanModel>> getKotaTujuan(
+            @Query("userId") String userid,
+            @Query("loginToken") String token);
+
+
+    @FormUrlEncoded
+    @POST("get_serch_byKota.php")
+    Call<ArrayList<CariJadwalModel>> postCariJadwal(
+            @Query("userId") String userid,
+            @Query("loginToken") String token,
+
+            @Field("tanggal") String tanggal,
+            @Field("pesan") String pesan,
+            @Field("kotaAwal") String kotaAwal,
+            @Field("kotaTujuan") String kotaTujuan);
+
+
 
     @FormUrlEncoded
     @POST("register_api.php")

@@ -389,7 +389,8 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:textSize="17dp"
-                                    android:text="Nama"/>
+                                    android:text="Nama"
+                                    android:id="@+id/tv_pesan_nama_detail_penumpang"/>
 
                                 <TextView
                                     android:layout_width="wrap_content"
@@ -588,6 +589,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="Pesan Tempat"
+                                    android:id="@+id/tv_pesan_kursi"
                                     android:textSize="17dp"/>
 
                             </LinearLayout>
@@ -607,7 +609,7 @@
                                 android:paddingBottom="12dp">
 
                                 <TextView
-                                    android:id="@+id/tv_pesan_nomor_kursi"
+                                    android:id="@+id/tv_pesan_nomor_kursi_klik"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:text="Pilih Kursi Anda"

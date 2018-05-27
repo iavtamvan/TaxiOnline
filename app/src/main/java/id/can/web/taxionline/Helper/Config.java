@@ -21,81 +21,25 @@ public final class Config {
 
 //    bundle mulai
 
+    public static final String BUNDLE_KOTA_SINGKATAN = "KOTA_SINGKATAN";
+    public static final String BUNDLE_KOTA_NAMA = "KOTA";
+    public static final String BUNDLE_PILIHAN= "PILIHAN_TUJUAN_ASAL";
+    public static final String BUNDLE_KOTA_ASAL= "KOTA_ASAL";
+    public static final String BUNDLE_KOTA_TUJUAN= "KOTA_TUJUAN";
+
+
+    public static final String BUNDLE_POST_KOTA_ASAL = "POST_KOTA_ASAL";
+    public static final String BUNDLE_POST_KOTA_TUJUAN = "POST_KOTA_TUJUAN";
+    public static final String BUNDLE_POST_TANGGAL = "POST_TANGGAL";
+    public static final String BUNDLE_POST_KURSI = "POST_KURSI";
+
+
+
     public static final String BUNDLE_NEWS_DETAIL_GAMBAR = "GAMBAR_NEWS";
     public static final String BUNDLE_NEWS_DETAIL_JUDUL = "JUDUL_NEWS";
     public static final String BUNDLE_NEWS_DETAIL_CREATEDBY = "CREATEDBY_NEWS";
     public static final String BUNDLE_NEWS_DETAIL_TANGGAL = "TANGGAL_NEWS";
     public static final String BUNDLE_NEWS_DETAIL_ARTIKEL = "ARTIKEL_NEWS";
-
-    public static final String BUNDLE_DAPIL_DETAIL_PROVINSI = "PROVINSI";
-    public static final String BUNDLE_DAPIL_DETAIL_WILAYAH_ID = "WILAYAH_ID";
-    public static final String BUNDLE_DAPIL_DETAIL_JABATAN = "JABATAN";
-    public static final String BUNDLE_DAPIL_DETAIL_NAMA_CALON = "NAMA_CALON";
-    public static final String BUNDLE_DAPIL_DETAIL_NAMA_WAKLI_CALON = "NAMA_WAKLI_CALON";
-    public static final String BUNDLE_DAPIL_DETAIL_PARTAI_PENGUSUNG = "PARTAI_PENGUSUNG";
-    public static final String BUNDLE_DAPIL_DETAIL_FOTO_BERDUA = "FOTO_BERDUA";
-    public static final String BUNDLE_DAPIL_DETAIL_VISI = "VISI";
-    public static final String BUNDLE_DAPIL_DETAIL_MISI = "MISI";
-    public static final String BUNDLE_DAPIL_DETAIL_PROGRAM = "PROGRAM";
-    public static final String BUNDLE_DAPIL_DETAIL_DETAILPROGRAM = "DETAILPROGRAM";
-    public static final String BUNDLE_DAPIL_DETAIL_TEMPATTANGGALLAHIRKETUA = "TEMPATTANGGALLAHIRKETUA";
-    public static final String BUNDLE_DAPIL_DETAIL_TEMPATTANGGALLAHIRWAKILKETUA = "TEMPATTANGGALLAHIRWAKILKETUA";
-    public static final String BUNDLE_DAPIL_DETAIL_PEKERJAANKETUA = "PEKERJAANKETUA";
-    public static final String BUNDLE_DAPIL_DETAIL_PEKERJAANWAKILKETUA = "PEKERJAANWAKILKETUA";
-    public static final String BUNDLE_DAPIL_DETAIL_STATUSPETAHANA = "STATUSPETAHANA";
-
-    public static final String BUNDLE_PARTAI_DETAIL_SINGKATAN = "SINGKATAN";
-    public static final String BUNDLE_PARTAI_DETAIL_ALAMAT = "ALAMAT";
-    public static final String BUNDLE_PARTAI_DETAIL_DATE = "DATE";
-    public static final String BUNDLE_PARTAI_DETAIL_NOTARIS_NO = "NOTARIS_NO";
-    public static final String BUNDLE_PARTAI_DETAIL_NOTARIS_NAMA = "NOTARIS_NAMA";
-    public static final String BUNDLE_PARTAI_DETAIL_NOTARIS_TANGGAL_PENDIRIAN = "NOTARIS_TANGGAL_PENDIRIAN";
-    public static final String BUNDLE_PARTAI_DETAIL_KEMKUMHAM_NO = "KEMKUMHAM_NO";
-    public static final String BUNDLE_PARTAI_DETAIL_KEMKUMHAM_TANGGAL = "KEMKUMHAM_TANGGAL";
-    public static final String BUNDLE_PARTAI_DETAIL_NOTELP = "NOTELP";
-    public static final String BUNDLE_PARTAI_DETAIL_FAX = "FAX";
-    public static final String BUNDLE_PARTAI_DETAIL_KETUM = "KETUM";
-    public static final String BUNDLE_PARTAI_DETAIL_BENDUM = "BENDUM";
-    public static final String BUNDLE_PARTAI_DETAIL_SEKJEN = "SEKJEN";
-    public static final String BUNDLE_PARTAI_DETAIL_BANK_NO = "BANK_NO";
-    public static final String BUNDLE_PARTAI_DETAIL_BANK_NAMA = "BANK_NAMA";
-    public static final String BUNDLE_PARTAI_DETAIL_BANK_PEMILIK = "BANK_PEMILIK";
-    public static final String BUNDLE_PARTAI_DETAIL_TANGGAL_CD = "TANGGAL_CD";
-    public static final String BUNDLE_PARTAI_DETAIL_TANGGAL_HARDCOPY = "TANGGAL_HARDCOPY";
-    public static final String BUNDLE_PARTAI_DETAIL_FOTO_PARTAI = "FOTO_PARTAI";
-    public static final String BUNDLE_PARTAI_DETAIL_NAMA = "NAMA";
-    public static final String BUNDLE_PARTAI_DETAIL_VISI = "VISI";
-    public static final String BUNDLE_PARTAI_DETAIL_MISI = "MISI";
-
-    public static final String BUNDLE_ANGGARAN_DETAIL_NAMASATKER = "NAMASATKER";
-    public static final String BUNDLE_ANGGARAN_DETAIL_USULANANGGARAN = "USULANANGGARAN";
-    public static final String BUNDLE_ANGGARAN_DETAIL_USULANANGGARANDISETUJUI = "USULANANGGARANDISETUJUI";
-    public static final String BUNDLE_ANGGARAN_DETAIL_TERMIN1 = "TERMIN1";
-    public static final String BUNDLE_ANGGARAN_DETAIL_TERMIN2 = "TERMIN2";
-    public static final String BUNDLE_ANGGARAN_DETAIL_TERMIN3 = "TERMIN3";
-    public static final String BUNDLE_ANGGARAN_DETAIL_TERMIN11 = "TERMIN11";
-    public static final String BUNDLE_ANGGARAN_DETAIL_TERMIN22 = "TERMIN22";
-    public static final String BUNDLE_ANGGARAN_DETAIL_TERMIN33 = "TERMIN33";
-    public static final String BUNDLE_ANGGARAN_DETAIL_TOTAL = "TOTAL";
-    public static final String BUNDLE_ANGGARAN_DETAIL_NOMORNHPD = "NOMORNHPD";
-    public static final String BUNDLE_ANGGARAN_DETAIL_TANGGALNPHD = "TANGGALNPHD";
-
-    public static final String BUNDLE_DATA_WILAYAH = "WILAYAH";
-
-    // bundle iklan
-    public static final String BUNDLE_IKLAN_JUDUL = "JUDUL";
-    public static final String BUNDLE_IKLAN_SUMBER = "SUMBER";
-    public static final String BUNDLE_IKLAN_LINK = "LINK";
-    public static final String BUNDLE_IKLAN_GAMBAR = "GAMBAR";
-    // bundle selesai iklan
-
-
-    public static final String BUNDLE_ANGGARAN_JENIS = "JENISANGGARAN";
-    public static final String BUNDLE_ANGGARAN_DETAIL = "DETAILANGGARAN";
-    public static final String SHARED_ANGGARAN_JENIS = "SHAREDJENISANGGARAN";
-    public static final String SHARED_ANGGARAN_DETAIL = "SHAREDDETAILANGGARAN";
-
-    public static final String BUNDLE_VOTINGLOGINSAVED = "VOTINGLOGINSAVED";
 //    bundle selesai
 
     // alarm mulai
@@ -130,6 +74,36 @@ public final class Config {
     public static final String SHARED_LOGIN_WAKTU = "LOGINWAKTU";
     public static final String SHARED_LOGIN_FB = "LOGINFB";
     public static final String SHARED_LOGIN_GOOGLE = "LOGINFB";
+
+    public static final String SHARED_KOTA_AWAL_LENGKAP = "SHARED_AWAL_LENGKAP";
+    public static final String SHARED_KOTA_AWAL_SINGKATAN = "SHARED_AWAL_SINGKATAN";
+    public static final String SHARED_KOTA_TUJUAN_LENGKAP = "SHARED_TUJUAN_LENGKAP";
+    public static final String SHARED_KOTA_TUJUAN_SINGKATAN = "SHARED_TUJUAN_SINGKATAN";
+
+
+    public static final String PERJALANAN_TANGGAL = "PERJALANAN_TANGGAL";
+    public static final String PERUSAHAAN_ID = "PERUSAHAAN_ID";
+    public static final String PERUSAHAAN_NAMA = "PERUSAHAAN_NAMA";
+    public static final String KOTA_AWAL_ID = "KOTA_AWAL_ID";
+    public static final String KOTA_AWAL = "KOTA_AWAL";
+    public static final String KOTA_TUJUAN_ID = "KOTA_TUJUAN_ID";
+    public static final String KOTA_TUJUAN = "KOTA_TUJUAN";
+    public static final String RUTE = "RUTE";
+    public static final String JAM_BERANGKAT_AWAL = "JAM_BERANGKAT_AWAL";
+    public static final String JAM_BERANGKAT_AKHIR = "JAM_BERANGKAT_AKHIR";
+    public static final String TOTAL_JAM_PERJALAN = "TOTAL_JAM_PERJALAN";
+    public static final String HARGA_AWAL = "HARGA_AWAL";
+    public static final String TARIF_INFANE = "TARIF_INFANE";
+    public static final String JUMLAH_PESAN = "JUMLAH_PESAN";
+    public static final String JUMLAH_BAYAR = "JUMLAH_BAYAR";
+
+
+
+
+
+
+
+
 
 
     //    saving Vote
@@ -204,6 +178,7 @@ public final class Config {
         editor.putString(Config.SHARED_LOGIN_WAKTU, "");
         editor.putString(Config.SHARED_LOGIN_FB, "");
         editor.putString(Config.SHARED_LOGIN_GOOGLE, "");
+        editor.putString(Config.SHARED_PREF_TOKEN, "");
         //Saving the sharedpreferences
         editor.commit();
 

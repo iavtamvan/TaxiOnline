@@ -23,7 +23,7 @@
         <activity android:name=".LoginActivity">
         </activity>
         <activity android:name=".RegisterActivity" />
-        <activity android:name=".Activity.CallCenterActivity" />
+        <activity android:name=".Activity.SearchKotaActivity" />
         <activity android:name=".SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

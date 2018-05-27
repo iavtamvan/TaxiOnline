@@ -36,7 +36,8 @@
                 android:layout_marginLeft="6dp"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:id="@+id/div_kota_asal">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -63,7 +64,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/linear_taxi_kota_tujuan"
+            android:id="@+id/div_kota_tujuan"
             android:layout_width="match_parent"
             android:layout_height="65dp"
             android:layout_marginBottom="4dp"
@@ -131,6 +132,7 @@
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="6dp"
                 android:layout_weight="1"
+                android:id="@+id/div_tanggal_pemesanan"
                 android:gravity="center"
                 android:orientation="vertical">
 
@@ -159,7 +161,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/linear_taxi_jumlah_kursi"
+            android:id="@+id/div_jumla_pesan_kursi"
             android:layout_width="match_parent"
             android:layout_height="65dp"
             android:layout_marginBottom="4dp"
@@ -191,6 +193,13 @@
                     android:id="@+id/tv_taxi_jumlah_kursi"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:text="Pilih Kursi"
+                    android:textColor="#000"
+                    android:textSize="20dp" />
+                <TextView
+                    android:id="@+id/tv_taxi_jumlah_kursi_hide"
+                    android:layout_width="1dp"
+                    android:layout_height="1dp"
                     android:text="1 kursi"
                     android:textColor="#000"
                     android:textSize="20dp" />

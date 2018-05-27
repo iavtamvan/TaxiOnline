@@ -11,9 +11,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.ArrayList;
-
-import id.can.web.taxionline.Activity.CallCenterActivity;
 import id.can.web.taxionline.Helper.Config;
 import id.can.web.taxionline.Model.CallCenterModel;
 import id.can.web.taxionline.R;
@@ -28,7 +25,7 @@ import retrofit2.Response;
  */
 public class CallCenterFragment extends Fragment {
 
-    private ArrayList<CallCenterModel> callCenterModels;
+    private CallCenterModel callCenterModels;
     private TextView tvTelpon;
     private TextView tvFb;
     private TextView tvIg;
@@ -46,12 +43,10 @@ public class CallCenterFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_call_center, container, false);
-        SharedPreferences sharedPreferences  = getActivity().getSharedPreferences(Config.SHARED_PREF_NAME, Context.MODE_PRIVATE);
-        username = sharedPreferences.getString(Config.SHARED_USERNAME,"");
-        tokenId = sharedPreferences.getString(Config.SHARED_PREF_TOKEN,"");
-        Toast.makeText(getActivity(), "" + username + tokenId, Toast.LENGTH_SHORT).show();
-        Toast.makeText(getActivity(), "" + username + tokenId, Toast.LENGTH_SHORT).show();
-        callCenterModels = new ArrayList<>();
+        SharedPreferences sharedPreferences = getActivity().getSharedPreferences(Config.SHARED_PREF_NAME, Context.MODE_PRIVATE);
+        username = sharedPreferences.getString(Config.SHARED_USERNAME, "");
+        tokenId = sharedPreferences.getString(Config.SHARED_PREF_TOKEN, "");
+        callCenterModels = new CallCenterModel();
         getCallCenter();
         initView(view);
         return view;
@@ -61,34 +56,36 @@ public class CallCenterFragment extends Fragment {
 
     private void getCallCenter() {
         ApiServiceServer apiServiceServer = ClientServer.getInstanceRetrofit();
-        Call<ArrayList<CallCenterModel>> call = apiServiceServer.getCallCenter(username, tokenId);
-        call.enqueue(new Callback<ArrayList<CallCenterModel>>() {
-                    @Override
-                    public void onResponse(Call<ArrayList<CallCenterModel>> call, Response<ArrayList<CallCenterModel>> response) {
-                        callCenterModels = response.body();
-                        for (int i = 0; i < callCenterModels.size(); i++) {
-                            String msg = callCenterModels.get(i).getMsg();
-                            String telpon = callCenterModels.get(i).getTelpon();
-                            String facebook = callCenterModels.get(i).getFacebook();
-                            String instagram = callCenterModels.get(i).getInstagram();
-                            String alamat_office = callCenterModels.get(i).getAlamatOffice();
-                            String website = callCenterModels.get(i).getWebsite();
+        Call<CallCenterModel> call = apiServiceServer.getCallCenter(username, tokenId);
+        call.enqueue(new Callback<CallCenterModel>() {
+            @Override
+            public void onResponse(Call<CallCenterModel> call, Response<CallCenterModel> response) {
+                callCenterModels = response.body();
+                String msg = response.body().getMsg();
+                String telpon = response.body().getTelpon();
+                String facebook = response.body().getFacebook();
+                String instagram = response.body().getInstagram();
+                String alamat_office = response.body().getAlamatOffice();
+                String website = response.body().getWebsite();
 
-                            tvTelpon.setText(telpon);
-                            tvFb.setText(facebook);
-                            tvIg.setText(instagram);
-                            tvAlamatKantor.setText(alamat_office);
-                            tvWebsite.setText(website);
+                Toast.makeText(getActivity(), "web " + website, Toast.LENGTH_SHORT).show();
 
-                            // TODO Silahkan SETTEXT
-                        }
-                    }
 
-                    @Override
-                    public void onFailure(Call<ArrayList<CallCenterModel>> call, Throwable t) {
-                        Toast.makeText(getActivity(), "" + Config.ERROR_NETWORK, Toast.LENGTH_SHORT).show();
-                    }
-                });
+                tvTelpon.setText(telpon);
+                tvFb.setText(facebook);
+                tvIg.setText(instagram);
+                tvAlamatKantor.setText(alamat_office);
+                tvWebsite.setText(website);
+
+                // TODO Silahkan SETTEXT
+            }
+
+            @Override
+            public void onFailure(Call<CallCenterModel> call, Throwable t) {
+                getCallCenter();
+                Toast.makeText(getActivity(), "" + Config.ERROR_NETWORK, Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     private void initView(View view) {
@@ -98,6 +95,6 @@ public class CallCenterFragment extends Fragment {
         tvAlamatKantor = (TextView) view.findViewById(R.id.tv_alamat_kantor);
         tvWebsite = (TextView) view.findViewById(R.id.tv_website);
     }
-    
+
 }
 

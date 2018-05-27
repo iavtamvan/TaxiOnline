@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/divKlik">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Kotanya"
+            android:layout_margin="4dp"
+            android:id="@+id/row_tv_nama_kota"
+            android:textSize="20dp"
+            android:layout_weight="1"
+            android:textColor="@android:color/black"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Kotanya Singkatan"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:layout_margin="4dp"
+            android:id="@+id/row_tv_nama_kota_singkatan"
+            android:textSize="20dp"
+            android:textColor="@android:color/black"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/black"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"/>
+</LinearLayout>

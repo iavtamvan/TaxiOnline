@@ -30,10 +30,17 @@
                     android:gravity="center_vertical"
                     android:textSize="18dp"
                     android:textColor="@color/black"
-                    android:text="Day Trans"
+                    android:text="Travel"
+                    android:id="@+id/tv_detail_nama_travel"
                     android:layout_marginLeft="10dp"/>
 
             </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Perjalanan tanggal"
+                android:gravity="center"
+                android:id="@+id/tv_detail_perjalanan_tanggal"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -82,12 +89,14 @@
                             android:layout_height="wrap_content"
                             android:textSize="20dp"
                             android:textColor="@color/black"
-                            android:text="Semarang"/>
+                            android:text="Kota Asal"
+                            android:id="@+id/tv_detail_kota_asal"/>
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="14:45 3 Agustus"/>
+                            android:text="Waktu berangkat"
+                            android:id="@+id/tv_detail_perjalanan_waktu_berangkat"/>
 
                     </LinearLayout>
 
@@ -111,7 +120,8 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="1j 20m"
+                            android:text="waktunya"
+                            android:id="@+id/tv_detail_waktu_durasi"
                             android:layout_marginLeft="6dp"/>
 
                     </LinearLayout>
@@ -134,12 +144,14 @@
                             android:layout_height="wrap_content"
                             android:textSize="20dp"
                             android:textColor="@color/black"
-                            android:text="Jakarta"/>
+                            android:text="Tujuan"
+                            android:id="@+id/tv_detail_kota_tujuan"/>
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="16:35 3 Agustus"/>
+                            android:text="waktu tiba"
+                            android:id="@+id/tv_detail_waktu_tiba"/>
 
                     </LinearLayout>
 
@@ -185,6 +197,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="4dp"
+                        android:id="@+id/tv_detail_rute_perjalanan"
                         android:text="Semarang - Kendal - Jakarta"/>
 
                 </LinearLayout>

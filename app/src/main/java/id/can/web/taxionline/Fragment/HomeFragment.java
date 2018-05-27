@@ -1,7 +1,9 @@
 package id.can.web.taxionline.Fragment;
 
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -18,6 +20,7 @@ import com.daimajia.slider.library.Tricks.ViewPagerEx;
 
 import java.util.HashMap;
 
+import id.can.web.taxionline.Helper.Config;
 import id.can.web.taxionline.R;
 import id.can.web.taxionline.Activity.CariTaksiActivity;
 import id.can.web.taxionline.Activity.SaldoActivity;
@@ -50,6 +53,23 @@ public class HomeFragment extends Fragment implements ViewPagerEx.OnPageChangeLi
         linearHomeTaxi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+//                Bundle bundle = new Bundle();
+//                bundle.putString(Config.BUNDLE_KOTA_SINGKATAN, "Pilih kota asal");
+//                bundle.putString(Config.BUNDLE_KOTA_NAMA, "Pilih kota tujuan");
+//                Intent intent = new Intent(getActivity(), CariTaksiActivity.class);
+//                intent.putExtras(bundle);
+//                startActivity(intent);
+
+                //Getting out shared preferences
+                SharedPreferences preferences = getActivity().getSharedPreferences(Config.SHARED_PREF_NAME, Context.MODE_PRIVATE);
+                //Getting editor
+                SharedPreferences.Editor editor = preferences.edit();
+
+
+                editor.putString(Config.SHARED_KOTA_AWAL_LENGKAP, "");
+                editor.putString(Config.SHARED_KOTA_TUJUAN_LENGKAP, "");
+
+                editor.commit();
                 startActivity(new Intent(getActivity(), CariTaksiActivity.class));
             }
         });

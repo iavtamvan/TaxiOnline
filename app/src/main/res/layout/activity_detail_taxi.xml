@@ -60,6 +60,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Rp 924.000"
+            android:id="@+id/tv_detail_jumlah_membayar"
             android:textSize="24dp"
             android:textColor="@color/colorAccent"/>
 
