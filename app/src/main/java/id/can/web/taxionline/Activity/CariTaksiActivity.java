@@ -140,6 +140,7 @@ public class CariTaksiActivity extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), SearchKotaActivity.class);
                 intent.putExtras(bundle);
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -151,6 +152,7 @@ public class CariTaksiActivity extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), SearchKotaActivity.class);
                 intent.putExtras(bundle);
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -159,7 +161,7 @@ public class CariTaksiActivity extends AppCompatActivity {
 
     private void alertKursi() {
 
-        final CharSequence[] itemKursi = {"Pilih kursi","1", "2", "3", "4", "5", "6", "7", "8"};
+        final CharSequence[] itemKursi = {"1", "2", "3", "4", "5", "6", "7", "8"};
 
         AlertDialog.Builder builder = new AlertDialog.Builder(CariTaksiActivity.this);
         builder.setTitle("Untuk Usia Diatas 2 Tahun");

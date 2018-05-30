@@ -1,5 +1,6 @@
 package id.can.web.taxionline.Activity;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -18,6 +19,7 @@ import java.util.ArrayList;
 
 import id.can.web.taxionline.Adapter.OperatorTaxiAdapter;
 import id.can.web.taxionline.Helper.Config;
+import id.can.web.taxionline.LoginActivity;
 import id.can.web.taxionline.Model.CariJadwalModel;
 import id.can.web.taxionline.Model.OperatorTaxiModel;
 import id.can.web.taxionline.R;
@@ -47,6 +49,7 @@ public class PilihOperatorTaxiActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pilih_operator_taxi);
         cariJadwalModels = new ArrayList<>();
+        initView();
 
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
@@ -68,10 +71,13 @@ public class PilihOperatorTaxiActivity extends AppCompatActivity {
 //        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(PilihOperatorTaxiActivity.this);
 //        recyclerView.setLayoutManager(layoutManager);
 //        recyclerView.setAdapter(adapter);
-        initView();
+
     }
 
     private void postDataSearch() {
+
+        final ProgressDialog loading = ProgressDialog.show(PilihOperatorTaxiActivity.this, "Loading", null, false, false);
+
         ApiServiceServer apiServiceServer = ClientServer.getInstanceRetrofit();
         apiServiceServer.postCariJadwal(username, tokenId, postTanggal, postKursi, postKotaAsal, postKotaTujuan)
                 .enqueue(new Callback<ArrayList<CariJadwalModel>>() {
@@ -145,6 +151,7 @@ public class PilihOperatorTaxiActivity extends AppCompatActivity {
                                 }
                             });
 
+                            loading.dismiss();
 
                             div.addView(addView);
 
@@ -154,6 +161,7 @@ public class PilihOperatorTaxiActivity extends AppCompatActivity {
 
                     @Override
                     public void onFailure(Call<ArrayList<CariJadwalModel>> call, Throwable t) {
+                        loading.dismiss();
                         Toast.makeText(PilihOperatorTaxiActivity.this, "" + Config.ERROR_NETWORK, Toast.LENGTH_SHORT).show();
                     }
                 });

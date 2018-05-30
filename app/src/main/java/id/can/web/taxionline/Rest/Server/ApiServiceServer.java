@@ -2,6 +2,7 @@ package id.can.web.taxionline.Rest.Server;
 
 import java.util.ArrayList;
 
+import id.can.web.taxionline.Model.BankModel;
 import id.can.web.taxionline.Model.CallCenterModel;
 import id.can.web.taxionline.Model.CariJadwalModel;
 import id.can.web.taxionline.Model.KotaAwalModel;
@@ -49,6 +50,11 @@ public interface ApiServiceServer {
             @Query("userId") String userid,
             @Query("loginToken") String token);
 
+    @GET("get_bank.php")
+    Call<ArrayList<BankModel>> getBank(
+            @Query("userId") String userid,
+            @Query("loginToken") String token);
+
 
     @FormUrlEncoded
     @POST("get_serch_byKota.php")
@@ -81,6 +87,10 @@ public interface ApiServiceServer {
     @FormUrlEncoded
     @POST("logout_api.php")
     Call<ResponseBody> postLogout(@Field("user_id") String user_id);
+
+    @FormUrlEncoded
+    @POST("forgot_password.php")
+    Call<ResponseBody> postForgotPassword(@Field("username") String username);
 
 
 

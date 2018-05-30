@@ -108,7 +108,7 @@ public class RegisterActivity extends AppCompatActivity {
         edtNamaLengkap = (EditText) findViewById(R.id.edt_namaLengkap);
         edtNohp = (EditText) findViewById(R.id.edt_nohp);
         edtEmail = (EditText) findViewById(R.id.edt_email);
-        edtUsername = (EditText) findViewById(R.id.edt_username);
+        edtUsername = (EditText) findViewById(R.id.edt_username_forgot);
         edtPassword = (EditText) findViewById(R.id.edt_password);
         rbLakilaki = (RadioButton) findViewById(R.id.rb_lakilaki);
         rbPerempuan = (RadioButton) findViewById(R.id.rb_perempuan);

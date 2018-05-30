@@ -1,6 +1,7 @@
 package id.can.web.taxionline.Activity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
@@ -9,6 +10,8 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -40,6 +43,8 @@ public class DetailTaxiActivity extends AppCompatActivity {
     private TabLayout tabLayout;
     private ViewPager viewpager;
     private TextView tvDetailJumlahMembayar;
+    private TabLayout tabs;
+    private LinearLayout divKlikPembayaran;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,6 +75,12 @@ public class DetailTaxiActivity extends AppCompatActivity {
         tvDetailJumlahMembayar.setText(jumlah_bayar);
 
 
+        divKlikPembayaran.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), BankActivity.class));
+            }
+        });
     }
 
     private void setupViewPager(ViewPager viewpager) {
@@ -83,6 +94,8 @@ public class DetailTaxiActivity extends AppCompatActivity {
         tabLayout = findViewById(R.id.tabs);
         viewpager = findViewById(R.id.viewpager);
         tvDetailJumlahMembayar = (TextView) findViewById(R.id.tv_detail_jumlah_membayar);
+        tabs = (TabLayout) findViewById(R.id.tabs);
+        divKlikPembayaran = (LinearLayout) findViewById(R.id.div_klik_pembayaran);
     }
 
     class ViewPagerAdapter extends FragmentPagerAdapter {
