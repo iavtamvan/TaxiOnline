@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONException;
@@ -30,6 +31,7 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText edtEmail;
     private EditText edtUsername;
     private EditText edtPassword;
+    private TextView tvLogin;
     private RadioButton rbLakilaki;
     private RadioButton rbPerempuan;
     private Button btnRegister;
@@ -40,12 +42,20 @@ public class RegisterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+        getSupportActionBar().hide();
         initView();
 
         deviceID = Settings.Secure.getString(getContentResolver(),
                 Settings.Secure.ANDROID_ID);
 
         time= System.currentTimeMillis();
+
+        tvLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
 
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -113,5 +123,6 @@ public class RegisterActivity extends AppCompatActivity {
         rbLakilaki = (RadioButton) findViewById(R.id.rb_lakilaki);
         rbPerempuan = (RadioButton) findViewById(R.id.rb_perempuan);
         btnRegister = (Button) findViewById(R.id.btn_register);
+        tvLogin = (TextView) findViewById(R.id.tv_login);
     }
 }

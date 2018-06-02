@@ -5,8 +5,10 @@ import java.util.ArrayList;
 import id.can.web.taxionline.Model.BankModel;
 import id.can.web.taxionline.Model.CallCenterModel;
 import id.can.web.taxionline.Model.CariJadwalModel;
+import id.can.web.taxionline.Model.HistoryOrderModel;
 import id.can.web.taxionline.Model.KotaAwalModel;
 import id.can.web.taxionline.Model.KotaTujuanModel;
+import id.can.web.taxionline.Model.HistoryPoinModel;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.Field;
@@ -55,13 +57,24 @@ public interface ApiServiceServer {
             @Query("userId") String userid,
             @Query("loginToken") String token);
 
+    @GET("get_history_order.php")
+    Call<ArrayList<HistoryOrderModel>> getHistoryOrder(
+            @Query("userId") String userid,
+            @Query("loginToken") String token
+    );
+
+    @GET("get_history_poin.php")
+    Call<ArrayList<HistoryPoinModel>> getHistoryPoin(
+            @Query("userId") String userid,
+            @Query("loginToken") String token
+    );
+
 
     @FormUrlEncoded
     @POST("get_serch_byKota.php")
     Call<ArrayList<CariJadwalModel>> postCariJadwal(
             @Query("userId") String userid,
             @Query("loginToken") String token,
-
             @Field("tanggal") String tanggal,
             @Field("pesan") String pesan,
             @Field("kotaAwal") String kotaAwal,
